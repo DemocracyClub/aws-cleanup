@@ -1,2 +1,5 @@
 REGION_NAME = 'eu-west-1'
-# TODO: tags
+TAGS = {
+    'application': 'wdiv',
+    'build_step': 'imported-db',
+}
