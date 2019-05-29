@@ -27,6 +27,8 @@ def get_images_in_use(region):
     return images
 
 def has_tag(image, key, value):
+    if not image.tags:
+        return False
     for tag in image.tags:
         if tag['Key'] == key and tag['Value'] == value:
             return True
