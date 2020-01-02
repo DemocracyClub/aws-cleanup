@@ -93,6 +93,9 @@ def main(region, tags, keep, action):
                 snapshot = ec2.Snapshot(device['Ebs']['SnapshotId'])
                 flagged_snapshots.append(snapshot)
 
+    flagged_images.sort(key=lambda x: x.creation_date)
+    flagged_snapshots.sort(key=lambda x: x.start_time)
+
     process_images(flagged_images, action)
     print('')
     process_snapshots(flagged_snapshots, action)
